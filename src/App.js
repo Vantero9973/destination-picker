@@ -16,7 +16,7 @@ function App() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/countries")
+    fetch("api/countries")
       .then((res) => res.json())
       .then((data) => {
         setCountries(data);
@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/destinations")
+    fetch("api/destinations")
       .then((res) => res.json())
       .then((data) => {
         setDestinations(data);
@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/me").then((r) => {
+    fetch("api/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }

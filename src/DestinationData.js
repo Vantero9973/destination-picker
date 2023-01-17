@@ -21,7 +21,7 @@ function DestinationData() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/destinations/${id}`)
+    fetch(`api/destinations/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setDestinations(data);
@@ -29,7 +29,7 @@ function DestinationData() {
   }, [id]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/destinations/${id}`)
+    fetch(`api/destinations/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setDeleteDestinations(data);

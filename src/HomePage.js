@@ -14,7 +14,7 @@ export default function HomePage({ destinations, countries, user, setSearch }) {
   const [destinationsArray, setDestinationsArray] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:3000/destinations")
+    fetch("api/destinations")
       .then((r) => r.json())
       .then((destination) => setDestinationsArray(destination));
   }, []);

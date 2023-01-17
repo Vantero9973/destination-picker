@@ -34,12 +34,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_011643) do
     t.string "type_of_destination"
     t.string "flight"
     t.string "country_name"
-    t.integer "country_id"
+    t.integer "country_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_destinations_on_country_id"
   end
-  
+
   create_table "matched_destinations", force: :cascade do |t|
     t.integer "destination_id", null: false
     t.integer "user_id", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_011643) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "password"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

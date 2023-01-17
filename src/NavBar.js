@@ -6,7 +6,7 @@ import SignUp from "./SignUp";
 
 export default function Navbar({ user, setUser }) {
   function handleLogoutClick() {
-    fetch("http://localhost:3000/logout", { method: "DELETE" }).then((r) => {
+    fetch("api/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
       }
@@ -33,9 +33,7 @@ export default function Navbar({ user, setUser }) {
           Destination Picker
         </h1>
         <Typewriter
-          words={[
-            "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -",
-          ]}
+          words={["- - - - - - - - - - - - - - - - - - - - - - - - - -"]}
           loop={500}
           typeSpeed={70}
           deleteSpeed={50}

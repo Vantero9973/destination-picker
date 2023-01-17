@@ -26,7 +26,7 @@ export default function VisitedPlaces({
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/destinations/${id}`)
+    fetch(`api/destinations/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setDeleteDestinations(data);
@@ -34,13 +34,13 @@ export default function VisitedPlaces({
   }, [id]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/destinations")
+    fetch("api/destinations")
       .then((r) => r.json())
       .then(setDeleteDestinations);
   }, []);
 
   function handleDelete(id) {
-    fetch(`http://localhost:3000/destinations/${id}`, {
+    fetch(`api/destinations/${id}`, {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {

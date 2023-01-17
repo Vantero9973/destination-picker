@@ -18,7 +18,7 @@ export default function NewDestForm() {
   const [formErrors, setFormErrors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/destinations")
+    fetch("api/destinations")
       .then((r) => r.json())
       .then(setDestinations);
   }, []);
