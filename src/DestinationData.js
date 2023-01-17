@@ -21,7 +21,7 @@ function DestinationData() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`api/destinations/${id}`)
+    fetch(`/api/destinations/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setDestinations(data);
@@ -29,7 +29,7 @@ function DestinationData() {
   }, [id]);
 
   useEffect(() => {
-    fetch(`api/destinations/${id}`)
+    fetch(`/api/destinations/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setDeleteDestinations(data);
@@ -37,7 +37,7 @@ function DestinationData() {
   }, [id]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/countries/${id}`)
+    fetch(`/api/countries/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCountries(data);
@@ -45,7 +45,7 @@ function DestinationData() {
   }, [id]);
 
   function handleDelete(id) {
-    fetch(`http://localhost:3000/destinations/${id}`, {
+    fetch(`/api/destinations/${id}`, {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {

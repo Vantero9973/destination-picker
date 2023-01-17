@@ -40,7 +40,7 @@ export default function VisitedPlaces({
   }, []);
 
   function handleDelete(id) {
-    fetch(`api/destinations/${id}`, {
+    fetch(`/api/destinations/${id}`, {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {

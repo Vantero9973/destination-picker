@@ -18,7 +18,7 @@ export default function BlogData() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`api/blogs/${id}`)
+    fetch(`/api/blogs/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);
@@ -32,7 +32,7 @@ export default function BlogData() {
   // }, []);
 
   function handleDelete(id) {
-    fetch(`api/blogs/${id}`, {
+    fetch(`/api/blogs/${id}`, {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {

@@ -12,7 +12,7 @@ export default function NewDestForm() {
   const [formErrors, setFormErrors] = useState([]);
 
   useEffect(() => {
-    fetch("api/blogs")
+    fetch("/api/blogs")
       .then((r) => r.json())
       .then(setBlogs);
   }, []);
@@ -25,7 +25,7 @@ export default function NewDestForm() {
       image: image,
       destination_id: parseInt(destination_id),
     };
-    fetch("api/blogs", {
+    fetch("/api/blogs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export default function NewDestForm() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/blogs/${id}`).then((r) => {
+    fetch(`/api/blogs/${id}`).then((r) => {
       if (r.ok) {
         r.json().then((blog) =>
           setBlog({ data: blog, error: null, status: "resolved" })

@@ -6,7 +6,7 @@ import SignUp from "./SignUp";
 
 export default function Navbar({ user, setUser }) {
   function handleLogoutClick() {
-    fetch("api/logout", { method: "DELETE" }).then((r) => {
+    fetch("/api/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
       }

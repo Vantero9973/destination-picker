@@ -9,7 +9,7 @@ export default function SignUp({ setUser }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("api/signup", {
+    fetch("/api/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

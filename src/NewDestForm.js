@@ -18,7 +18,7 @@ export default function NewDestForm() {
   const [formErrors, setFormErrors] = useState([]);
 
   useEffect(() => {
-    fetch("api/destinations")
+    fetch("/api/destinations")
       .then((r) => r.json())
       .then(setDestinations);
   }, []);
@@ -34,7 +34,7 @@ export default function NewDestForm() {
       flight: flight,
       country_id: parseInt(country_id),
     };
-    fetch("http://localhost:3000/destinations", {
+    fetch("/api/destinations", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -60,7 +60,7 @@ export default function NewDestForm() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/destinations/${id}`).then((r) => {
+    fetch(`/api/destinations/${id}`).then((r) => {
       if (r.ok) {
         r.json().then((destination) =>
           setDestination({ data: destination, error: null, status: "resolved" })
