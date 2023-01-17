@@ -1,0 +1,3 @@
+class MatchedDestination < ApplicationRecord
+  
+end
