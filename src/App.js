@@ -6,6 +6,7 @@ import DestinationData from "./DestinationData";
 import MapPage from "./MapPage";
 import NavBar from "./NavBar";
 import BlogData from "./BlogData";
+import "react-tooltip/dist/react-tooltip.css";
 
 function App() {
   const [content, setContent] = useState("");
